@@ -1,0 +1,38 @@
+﻿<div class="headertop_desc">
+    <div class="call">
+        <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></p>
+    </div>
+    <div class="account_desc">
+        <ul>
+            <li><a asp-controller="HangHoa" asp-action="Create">Thêm Hàng Hóa</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Checkout</a></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="header_top">
+    <div class="logo">
+        <a asp-controller="HangHoa" asp-action="Index">
+            <img src="~/images/logo.png" alt="Logo" />
+        </a>
+    </div>
+    <div class="cart">
+        <p>Welcome to our Online Store! <span>Cart:</span> 0 item(s) - $0.00</p>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="header_bottom">
+    <div class="menu">
+        @await Component.InvokeAsync("LoaiHangMenu")
+    </div>
+    <div class="search_box">
+        <form onsubmit="return false;">
+            <input type="text" id="txtSearch" placeholder="Search" />
+            <input type="button" id="btnSearch" value="" />
+        </form>
+    </div>
+    <div class="clear"></div>
+</div>

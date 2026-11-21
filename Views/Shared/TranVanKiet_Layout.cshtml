@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TranVanKiet_2023</title>
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/global.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/easy-responsive-tabs.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="~/js/jquery.easing.js" type="text/javascript"></script>
+    <script src="~/js/easing.js" type="text/javascript"></script>
+    <script src="~/js/move-top.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header" id="TranVanKiet_Header">
+            @await Html.PartialAsync("_TranVanKiet_Header")
+        </div>
+
+        <div class="content" id="TranVanKiet_MainContent">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="footer" id="TranVanKiet_Footer">
+        @await Html.PartialAsync("_TranVanKiet_Footer")
+    </div>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

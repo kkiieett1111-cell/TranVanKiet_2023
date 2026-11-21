@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TranVanKiet_2023.Models.HangHoa>
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<div id="ajax-hanghoa-container">
+    @await Html.PartialAsync("_DanhSachHangHoa", Model)
+</div>
+
+@section Scripts {
+    <script>
+        $(document).on("click", ".category-filter", function (e) {
+            e.preventDefault();
+            var maLoai = $(this).data("maloai");
+
+            $(".menu li").removeClass("active");
+            $(this).closest("li").addClass("active");
+
+            $.ajax({
+                url: '@Url.Action("FilterByCategory", "HangHoa")',
+                type: 'GET',
+                data: { maLoai: maLoai },
+                success: function (result) {
+                    $("#ajax-hanghoa-container").html(result);
+                },
+                error: function () {
+                    alert("Không thể lọc dữ liệu hàng hóa.");
+                }
+            });
+        });
+    </script>
+}
